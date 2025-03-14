@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: sf_source
+    database: MINI_HOTEL
+    schema: DBO
+    tables:
+      - name: CUSTOMERS
+      - name: PRODUCTS
+      - name: TRANSACTIONS
+
+models:
+  - name: stg_CUSTOMER
+    description: "Staging table for customers"
+    columns:
+      - name: customer_id
+        description: "Primary key for customers"
+        tests:
+          - unique
+          - not_null
